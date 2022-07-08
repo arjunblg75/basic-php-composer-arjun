@@ -5,7 +5,7 @@ variables:
   # Azure Resource Manager connection created during pipeline creation
   azureSubscription: 'subscription-id'
   # Web app name
-  webAppName: 'web-app-name'
+  webAppName: 'abphpnew'
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
   # Environment name
@@ -17,7 +17,7 @@ stages:
 - stage: Build
   displayName: Build stage
   variables:
-    phpVersion: '8'
+    phpVersion: '7.4'
   jobs:
   - job: BuildJob
     pool:
@@ -66,9 +66,9 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Deploy Azure Web App'
             inputs:
-              azureSubscription: 'abaliga'
+              azureSubscription: 'Arjun Baliga(2)(dd944d6a-77e1-486e-9a53-dd91dfa84783)'
               appType: 'webAppLinux'
-              appName: 'aphp8'
+              appName: 'aphpnew'
               package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
-              runtimeStack: 'PHP|8.0'
+              runtimeStack: 'PHP|7.4'
     
